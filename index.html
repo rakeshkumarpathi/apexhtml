@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Planet Task - 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="form-header">
+            <h1>Apex Planet Form</h1>
+            <p>Welcome to the Apex Planet form. Please fill out the details below.</p>
+        </header>
+        <div class="form-container">
+            <form action="todo.html" method="GET">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone number">Phone Number</label>
+                    <input type="tel" id="phone number" name="phone number" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="current qualification">Current Qualification</label>
+                    <input list="Current Qualification"  name="Current Qualification" placeholder="Enter your Current Qualification" required>
+                    <datalist id="Current Qualification">
+                        <option value="student">
+                        <option value="Fresher">
+                        <option value="employed">
+                        <option value="Other">
+                    </datalist>
+                </div>
+                <div class="form-group">
+                    <label>Skills</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="skill1" name="skills" value="Java">
+                            <label for="skill1">Java</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="skill2" name="skills" value="Python">
+                            <label for="skill2">Python</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="skill3" name="skills" value="JavaScript">
+                            <label for="skill3">JavaScript</label>
+                    </div>
+                    </div>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

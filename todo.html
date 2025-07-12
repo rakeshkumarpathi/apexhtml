@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Planning To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Simple celebration style */
+        #celebration {
+            display: none;
+            text-align: center;
+            font-size: 2rem;
+            color: #206bff;
+            margin-top: 2rem;
+            animation: pop 0.7s;
+        }
+        @keyframes pop {
+            0% { transform: scale(0.7); opacity: 0; }
+            70% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="form-header">
+            <h1>Placement Planning To-Do List</h1>
+            <p>Organize your tasks for the month ahead.</p>
+        </header>
+        <div class="todo-container">
+            <ul class="todo-list">
+                <li>
+                    <input type="checkbox" id="task1">
+                    <label for="task1">Update resume</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="task2">
+                    <label for="task2">Research companies</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="task3">
+                    <label for="task3">Prepare for interviews</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="task4">
+                    <label for="task4">Attend networking events</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="task5">
+                    <label for="task5">Apply for internships</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="task6">
+                    <label for="task6">Follow up on applications</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="task7">
+                    <label for="task7">Schedule mock interviews</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="task8">
+                    <label for="task8">Prepare a portfolio</label>
+                </li>
+            </ul>
+            <button id="doneBtn" disabled>Done</button>
+            <div id="celebration">🎉 Congratulations! All tasks completed! 🎉</div>
+        </div>
+    </div>
+    <script>
+        // Enable Done button only when all tasks are checked
+        const checkboxes = document.querySelectorAll('.todo-list input[type="checkbox"]');
+        const doneBtn = document.getElementById('doneBtn');
+        const celebration = document.getElementById('celebration');
+
+        function checkTasks() {
+            const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+            doneBtn.disabled = !allChecked;
+        }
+
+        checkboxes.forEach(cb => cb.addEventListener('change', checkTasks));
+
+        doneBtn.addEventListener('click', () => {
+            celebration.style.display = 'block';
+            doneBtn.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

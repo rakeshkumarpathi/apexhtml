@@ -1,0 +1,296 @@
+:root {
+    --primary-gradient: linear-gradient(to right, #f64fbc, #9e49ff, #206bff, #3a8dde);
+    --text-gradient: linear-gradient(to right, #76255a, #512584, #0e3b88, #285c93);
+    --hover-gradient: linear-gradient(to right, #e045a8, #8a3ce6, #1857d6, #2f78b8);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --white-bg: rgba(255, 255, 255, 0.95);
+}
+
+body {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    color: #1a1a1a;
+    background-image: var(--primary-gradient);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    overflow-x: hidden;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: var(--white-bg);
+    box-shadow: 0 10px 30px var(--shadow-color);
+    width: 32rem;
+    min-height: 36rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--shadow-color);
+}
+
+.form-header {
+    text-align: center;
+    padding: 1.5rem 2rem;
+}
+
+.form-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.form-header p {
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.form-container {
+    margin: 1.5rem auto;
+    width: 85%;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.form-container .form-group {
+    width: 100%;
+    position: relative;
+}
+
+.form-container label {
+    font-size: 1.1rem;
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container input[list="Current Qualification" ]
+ {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 1rem;
+    padding: 0.75rem 0.5rem;
+    background: transparent;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container input[type="tel"]:focus,
+.form-container input[list="Current Qualification"]:focus 
+ {
+    outline: none;
+    border-color: #206bff;
+    box-shadow: 0 2px 5px rgba(32, 107, 255, 0.3);
+}
+
+.form-container input[type="text"]::placeholder,
+.form-container input[type="email"]::placeholder,
+.form-container input[type="tel"]::placeholder,
+.form-container input[list="Current Qualification"]::placeholder {
+    color: #666;
+    opacity: 0.7;
+}
+
+.form-container .checkbox-group input[type="checkbox"] {
+    padding: 1rem 0rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Adds space between each checkbox item */
+    outline: none;
+    border-color: #206bff;
+    box-shadow: 0 2px 5px rgba(32, 107, 255, 0.3);
+}
+
+.form-container .checkbox-group .checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between checkbox and label */
+}
+
+
+.form-container .checkbox-group label {
+    font-size: 1rem;
+    color: #565656;
+    font-weight: 400;
+    margin-bottom: 0; /* Remove margin-bottom to avoid double spacing with gap */
+    display: flex;
+    align-items: center; /* Vertically center checkbox and label text */
+    cursor: pointer;
+}
+
+.form-container .checkbox-group input[type="checkbox"] {
+    margin-right: 0; /* Space between checkbox and label text */
+}
+
+.form-container button[type="submit"] {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 12px;
+    background: var(--primary-gradient);
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    align-self: center;
+}
+
+.form-container button[type="submit"]:hover {
+    background: var(--hover-gradient);
+    transform: scale(1.05);
+}
+
+.form-container button[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(32, 107, 255, 0.3);
+}
+
+.todo-container {
+    width: 85%;
+    margin: 2rem auto;
+    background-color: var(--white-bg);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px var(--shadow-color);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.todo-list li {
+    display: flex;
+    align-items: center;
+    background: rgba(58, 141, 222, 0.07);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    transition: background 0.2s;
+}
+
+.todo-list li:hover {
+    background: rgba(58, 141, 222, 0.15);
+}
+
+.todo-list input[type="checkbox"] {
+    accent-color: #206bff;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.todo-list label {
+    font-size: 1.1rem;
+    color: #285c93;
+    font-weight: 500;
+    cursor: pointer;
+    transition: text-decoration 0.2s, color 0.2s;
+}
+
+.todo-list input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #888;
+}
+
+@media (max-width: 750px) {
+    .container {
+        width: 70%;
+        min-height: 36rem;
+        padding: 1.5rem;
+    }
+
+    .form-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .form-header p {
+        font-size: 0.9rem;
+    }
+
+    .form-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 80%;
+        min-height: 38rem;
+        padding: 1rem;
+    }
+
+    .form-container {
+        width: 85%;
+        margin: 1rem auto;
+    }
+}
+
+@media (max-width: 460px) {
+    .container {
+        width: 90%;
+        min-height: 38rem;
+        padding: 0.8rem;
+    }
+
+    .form-container {
+        width: 75%;
+        margin: 1rem auto;
+    }
+}
+
+
+
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+} /*intresting brooo*/
+body {
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+}
